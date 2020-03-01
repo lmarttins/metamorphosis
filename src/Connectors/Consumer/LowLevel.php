@@ -46,6 +46,6 @@ class LowLevel implements ConnectorInterface
 
     protected function getConf(): Conf
     {
-        return resolve(Conf::class);
+        return app(Conf::class);
     }
 }

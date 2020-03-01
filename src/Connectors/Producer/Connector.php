@@ -13,7 +13,7 @@ class Connector
 {
     public function getProducerTopic(HandlerInterface $handler): KafkaProducer
     {
-        $conf = resolve(Conf::class);
+        $conf = app(Conf::class);
 
         if ($this->canHandleResponse($handler)) {
             $conf->setDrMsgCb(function ($kafka, Message $message) use ($handler) {
